@@ -16,7 +16,6 @@
         <!--mysql-->
         <mysql.version>8.0.33</mysql.version>
         <tk-mybatis.version>2.1.5</tk-mybatis.version>
-        <tk-mybatis-mapper.version>4.1.5</tk-mybatis-mapper.version>
     </properties>
 
     <dependencies>
