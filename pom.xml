@@ -6,38 +6,52 @@
 
     <groupId>org.linkgems</groupId>
     <artifactId>rical-data</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>provider</module>
+        <module>dependency</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
+        <common.eve.version>1.0.4-SNAPSHOT</common.eve.version>
+        <data.mysql.version>1.0.0-SNAPSHOT</data.mysql.version>
+        <data.provider.version>1.0.0-SNAPSHOT</data.provider.version>
+        <data.dependency.version>1.0.0-SNAPSHOT</data.dependency.version>
     </properties>
+
 
     <dependencyManagement>
         <dependencies>
-            <!--springboot-->
+            <!--common-eve-->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.LinkGems.rical</groupId>
+                <artifactId>common.eve</artifactId>
+                <version>${common.eve.version}</version>
+            </dependency>
+
+            <!--data.mysql-->
+            <dependency>
+                <groupId>org.LinkGems.rical</groupId>
+                <artifactId>data.mysql</artifactId>
+                <version>${data.mysql.version}</version>
+            </dependency>
+
+            <!--project-->
+            <dependency>
+                <groupId>org.linkgems.rical</groupId>
+                <artifactId>data.dependency</artifactId>
+                <version>${data.provider.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.linkgems.rical</groupId>
+                <artifactId>data.dependency</artifactId>
+                <version>${data.dependency.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <!--springboot依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
 </project>
